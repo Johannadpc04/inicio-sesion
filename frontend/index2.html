@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Fullstack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">MiProyecto_JS</div>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="card-container">
+        <div class="card">
+            <h3>Registrar Tarea</h3>
+            <input type="text" id="inputTarea" placeholder="Nombre de la tarea...">
+            <button onclick="guardarDatos()" class="btn-primary">Guardar en BD</button>
+            <p id="feedback"></p>
+        </div>
+        </section>
+
+        <section class="hero">
+            <h1>Panel de Control de Datos</h1>
+            <p>Conectando el frontend con lógica de servidor en tiempo real.</p>
+            <button id="btnConsultar" class="btn-primary">Consultar Backend</button>
+        </section>
+
+        <section id="dashboard" class="card-container">
+            <div class="card">
+                <h3>Estado del Servidor</h3>
+                <p id="status">Esperando conexión...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desarrollado con VS Code</p>
+    </footer>
+
+</body>
+</html>
