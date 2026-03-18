@@ -2,30 +2,40 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Proyecto Fullstack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Fullstack</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Conexión Frontend-Backend</h1>
-    <button id="btnConsultar">Obtener datos del servidor</button>
-    <div id="resultado"></div>
 
-    <script>
-        const boton = document.getElementById('btnConsultar');
-        const display = document.getElementById('resultado');
+    <header>
+        <nav>
+            <div class="logo">MiProyecto_JS</div>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        boton.addEventListener('click', async () => {
-            try {
-                // Hacemos la petición al backend
-                const respuesta = await fetch('http://localhost:3000/datos');
-                const datos = await respuesta.json();
+    <main>
+        <section class="hero">
+            <h1>Panel de Control de Datos</h1>
+            <p>Conectando el frontend con lógica de servidor en tiempo real.</p>
+            <button id="btnConsultar" class="btn-primary">Consultar Backend</button>
+        </section>
 
-                // Mostramos la respuesta en el HTML
-                display.innerHTML = `<p>${datos.mensaje} - Usuario: ${datos.usuario}</p>`;
-            } catch (error) {
-                console.error("Error al conectar:", error);
-                display.innerText = "No se pudo conectar con el backend.";
-            }
-        });
-    </script>
+        <section id="dashboard" class="card-container">
+            <div class="card">
+                <h3>Estado del Servidor</h3>
+                <p id="status">Esperando conexión...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desarrollado con VS Code</p>
+    </footer>
+
 </body>
 </html>
