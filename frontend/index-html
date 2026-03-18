@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Proyecto Fullstack</title>
+</head>
+<body>
+    <h1>Conexión Frontend-Backend</h1>
+    <button id="btnConsultar">Obtener datos del servidor</button>
+    <div id="resultado"></div>
+
+    <script>
+        const boton = document.getElementById('btnConsultar');
+        const display = document.getElementById('resultado');
+
+        boton.addEventListener('click', async () => {
+            try {
+                // Hacemos la petición al backend
+                const respuesta = await fetch('http://localhost:3000/datos');
+                const datos = await respuesta.json();
+
+                // Mostramos la respuesta en el HTML
+                display.innerHTML = `<p>${datos.mensaje} - Usuario: ${datos.usuario}</p>`;
+            } catch (error) {
+                console.error("Error al conectar:", error);
+                display.innerText = "No se pudo conectar con el backend.";
+            }
+        });
+    </script>
+</body>
+</html>
